@@ -3,17 +3,17 @@
     "name": "db",
     "connector": "memory"
   },
-  "CoffeeShopService": {
+  "ipService": {
     "name": "ipRest",
     "connector": "rest",
     "operations": [
       {
         "template": {
           "method": "GET",
-          "url": "http://ip-api.com/json/94.244.138.46"
+          "url": "http://ip-api.com/json/{getIp:string}"
         },
         "functions": {
-          "find": []
+          "findById": ["getIp"]
         }
       }
     ]

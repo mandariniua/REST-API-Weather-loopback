@@ -2,14 +2,14 @@
  * Created by Коля on 23.03.2017.
  */
 
-module.exports = function(ip) {
+module.exports = function(Ip) {
 
-  ip.observe('before save', function(ctx, next) {
+  Ip.observe('before save', function(ctx, next) {
 
-    console.log('> ip before save triggered');
+    console.log('> Magazine before save triggered');
 
     var model = ctx.instance;
-    var ipService = ip.app.dataSources.ipRest;
+    var ipService = Ip.app.dataSources.ipService;
 
     ipService.find(function(err, response, context) {
       if (err) throw err; //error making request
