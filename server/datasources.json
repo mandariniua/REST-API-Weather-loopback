@@ -1,0 +1,21 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "CoffeeShopService": {
+    "name": "ipRest",
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://ip-api.com/json/94.244.138.46"
+        },
+        "functions": {
+          "find": []
+        }
+      }
+    ]
+  }
+}
