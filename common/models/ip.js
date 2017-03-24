@@ -6,7 +6,7 @@ module.exports = function(Ip) {
 
   Ip.observe('before save', function(ctx, next) {
 
-    console.log('> Magazine before save triggered');
+    console.log('>save triggered');
 
     var model = ctx.instance;
     var ipService = Ip.app.dataSources.ipService;
@@ -17,8 +17,8 @@ module.exports = function(Ip) {
         next('> response error: ' + response.error.stack);
       }
       model.ipInfo = response;
-      console.log('> coffee shops fetched successfully from remote server');
-      //verify via `curl localhost:3000/api/Magazines`
+      console.log('>successfully from remote server');
+
       next();
     });
   });
